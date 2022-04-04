@@ -1,7 +1,15 @@
 import "./App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Containers/Home/Home";
 
 function App() {
-  return <div className="App">Learn React</div>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
