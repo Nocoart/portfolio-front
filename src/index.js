@@ -1,13 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import "./font.scss";
-import "./root.scss";
+import ReactDOM from "react-dom/client";
+import "./Styles/index.scss";
+import "./Styles/font.scss";
+import "./Styles/root.scss";
 import App from "./App";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
