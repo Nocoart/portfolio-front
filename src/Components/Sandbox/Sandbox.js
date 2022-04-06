@@ -11,7 +11,12 @@ const Sandbox = () => {
   const { ref: card2, inView: cardInView2, entry2 } = useInView({ threshold: 1 });
 
   useEffect(() => {
-    gsap.to(header.current, { color: "red", duration: 2 });
+    gsap.to(header.current, 0.5, {
+      opacity: 1,
+      y: 20,
+      x: 30,
+      ease: Power3,
+    });
   }, []);
 
   return (
