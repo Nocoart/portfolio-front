@@ -24,6 +24,15 @@ h1 {
   white-space: nowrap;
 }
 
+p {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url("../assets/img/back.jpg");
+  background-repeat: repeat-x;
+  background-size: contain;
+  color: transparent;
+}
+
 .title {
   font-family: var(--title);
 }

@@ -15,14 +15,19 @@ import "./Home.scss";
 
 const Home = () => {
   const { height, width } = useWindowDimensions();
+  const welcome = "Welcome";
   const name = "I'm \n Nicolas Guerineau";
+  const subtitle = "Full stack developper";
 
   return (
     <div className="container home">
       <header>
         <img src={width > 426 ? background : phoneBackground} alt="header image" />
-        <h1 className="title">{colorText(name)}</h1>
-        <p className="subtitle">Im' a full stack developper</p>
+        <div className="center">
+          <h1 className="title">{colorText(welcome)}</h1>
+          <h1 className="title">{colorText(name)}</h1>
+          <p className="subtitle">{colorText(subtitle)}</p>
+        </div>
       </header>
 
       <Link to="/about">{`{`}</Link>
