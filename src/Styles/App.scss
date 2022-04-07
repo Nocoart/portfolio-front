@@ -9,6 +9,25 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.container {
+  width: 100vw;
+  background-color: black;
+}
+
+h1 {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url("../assets/img/back.jpg");
+  background-repeat: repeat-x;
+  background-size: contain;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: var(--title);
+}
+
 .pink {
   color: var(--pink);
 }

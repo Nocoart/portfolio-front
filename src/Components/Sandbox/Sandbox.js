@@ -1,7 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useInView, InView } from "react-intersection-observer";
-import { gsap, TweenMax, Power3 } from "gsap";
+import { useInView } from "react-intersection-observer";
+import pic from "../../assets/img/profil-pic.svg";
+
+import Carte from "./Carte";
+
 import "./Sandbox.scss";
+const arrayLength = 30;
+const array = [];
+
+for (let i = 0; i < arrayLength; i++) {
+  array.push(`card number ${i}`);
+}
 
 const Sandbox = () => {
   const header = useRef(null);
@@ -10,127 +19,11 @@ const Sandbox = () => {
   const { ref: card1, inView: cardInView1, entry1 } = useInView({ threshold: 1 });
   const { ref: card2, inView: cardInView2, entry2 } = useInView({ threshold: 1 });
 
-  useEffect(() => {
-    gsap.to(header.current, 0.5, {
-      opacity: 1,
-      y: 20,
-      x: 30,
-      ease: Power3,
-    });
-  }, []);
-
   return (
     <div>
-      <h1 ref={header} style={{ fontSize: "40px", fontFamily: "Game Of Squids" }}>
-        TITLE
-      </h1>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte" ref={card1}>
-        {`carte observed ${cardInView1 ? "yes" : "no"}`}
-      </div>
-      <div className="carte" ref={card2}>
-        {`carte observed ${cardInView2 ? "yes" : "no"}`}
-      </div>
-
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-      <div className="carte">carte</div>
-
-      {/* <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refright}>
-        {`carte ${inView}`}
-      </div>
-      <div className="carte" ref={refleft}>
-        {`carte ${inView}`}
-      </div> */}
+      {array.map((item, index) => (
+        <Carte item={item} key={index} index={index} />
+      ))}
     </div>
   );
 };
