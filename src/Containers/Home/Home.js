@@ -15,7 +15,7 @@ import "./Home.scss";
 
 const Home = () => {
   const { height, width } = useWindowDimensions();
-  const name = "Nicolas Guerineau";
+  const name = "I'm \n Nicolas Guerineau";
 
   return (
     <div className="container home">
